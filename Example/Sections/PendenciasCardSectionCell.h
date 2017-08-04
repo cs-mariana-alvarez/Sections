@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SectionCellInfraProtocols.h"
+#import <Sections/BaseCardSectionCell.h>
 
-@interface PendenciasCardSectionCell : NSObject<SectionCell>
+@interface PendenciasCardSectionCell : BaseCardSectionCell<SectionCell>
 
 @end

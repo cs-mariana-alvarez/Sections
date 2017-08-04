@@ -10,7 +10,7 @@
 #import "ActionsCell.h"
 #import "PriceCell.h"
 #import "WhiteSpaceCell.h"
-
+#import "CollectionViewReusableHeaderBuilder.h"
 #import "SaldoCellBuilder.h"
 #import "WhiteSpaceCellBuilder.h"
 #import "ActionsCellBuilder.h"
@@ -38,14 +38,8 @@
                          [[ActionsCellBuilder alloc] initWithCellDelegate:self.delegate]
                          ];
     self.cellBuilders = builders;
+    self.headerBuilder = [[CollectionViewReusableHeaderBuilder alloc] initWithTitle: @"Section Title: 2"];
 }
-
--(void)registerCellsForBuildersInCollectionView:(UICollectionView *)collectionView {
-    for(id<CellBuilderProtocol> builder in self.cellBuilders) {
-        [builder registerCellInCollectionView:collectionView];
-    }
-}
-
 
 -(NSInteger)numberOfItems {
     return self.cellBuilders.count;

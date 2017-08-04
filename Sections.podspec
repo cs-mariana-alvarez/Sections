@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Sections'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'Sections pod creates an abstraction to work with Sections with specific needs'
 
 # This description is used to generate tags and improve search results.
@@ -31,11 +31,11 @@ See project example for more details.
 
   s.ios.deployment_target = '7.0'
 
-  s.source_files = 'Sections/Classes/**/*'
+  s.source_files = 'Sections/**/*.{m,h}'
 
-  # s.resource_bundles = {
-  #   'Sections' => ['Sections/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'Xibs' => ['Sections/**/*.xib']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'

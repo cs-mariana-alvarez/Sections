@@ -1,6 +1,6 @@
 {
   "name": "Sections",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "summary": "Sections pod creates an abstraction to work with Sections with specific needs",
   "description": "Sections pod creates an abstraction to work with Sections with specific needs.\nSee project example for more details.",
   "homepage": "https://github.com/thiagolioy/Sections",
@@ -13,12 +13,17 @@
   },
   "source": {
     "git": "https://github.com/thiagolioy/Sections.git",
-    "tag": "0.0.1"
+    "tag": "0.0.5"
   },
   "social_media_url": "https://twitter.com/@tplioy",
   "platforms": {
     "ios": "7.0"
   },
-  "source_files": "Sections/Classes/**/*",
+  "source_files": "Sections/**/*.{m,h}",
+  "resource_bundles": {
+    "Xibs": [
+      "Sections/**/*.xib"
+    ]
+  },
   "frameworks": "UIKit"
 }

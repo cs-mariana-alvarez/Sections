@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Bricks/Bricks.h>
 #import "Sizeable.h"
+
 @interface PriceCell : BKBaseCollectionViewCell<Sizeable>
 
 @end

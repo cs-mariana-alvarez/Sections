@@ -22,7 +22,7 @@
     return self;
 }
 
--(void)registerCellsForBuildersInCollectionView:(UICollectionView *)collectionView {
+-(void)registerViewsForBuildersInCollectionView:(UICollectionView *)collectionView {
     [GridCollectionViewCell registerForCollectionView:collectionView];
     [CollectionViewReusableHeader registerHeaderCellIn:collectionView];
 }

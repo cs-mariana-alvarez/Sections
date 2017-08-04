@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SectionCellInfraProtocols.h"
+#import <Sections/BaseCardSectionCell.h>
 
-@interface SaldoExpandedCardSectionCell : NSObject<SectionCell>
+@interface SaldoExpandedCardSectionCell : BaseCardSectionCell<SectionCell>
 -(instancetype)initWithCellDelegate:(id<CellDelegate>) cellDelegate;
 @end

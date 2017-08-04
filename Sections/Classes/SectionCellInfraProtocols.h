@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CellBuilderProtocol.h"
+#import "HeaderBuilderProtocol.h"
 
 @protocol CellDelegate;
 @protocol SectionCell <NSObject>
-@property (strong, nonatomic, nonnull) NSArray *cellBuilders;
+@property (strong, nonatomic, nonnull) NSArray<id<CellBuilderProtocol>> *cellBuilders;
+@property (strong, nonatomic, nullable) id<HeaderBuilderProtocol> headerBuilder;
 
 @required
--(void)registerCellsForBuildersInCollectionView:(UICollectionView* _Nonnull)collectionView;
+-(void)registerViewsForBuildersInCollectionView:(UICollectionView* _Nonnull)collectionView;
 -(NSInteger)numberOfItems;
 -(CGSize)sectionItemSizeAtIndexPath:(NSIndexPath*) indexPath inCollectionView:(UICollectionView* _Nonnull)collectionView;
 -(UICollectionViewCell* _Nonnull)sectionItemCellAtIndexPath:(NSIndexPath* _Nonnull) indexPath inCollectionView:(UICollectionView* _Nonnull)collectionView;
@@ -47,7 +50,7 @@ typedef NS_ENUM (NSInteger, SectionType) {
 @protocol Section <NSObject>
 
 @property(weak, nonatomic, nullable) id<SectionDelegate> sectionDelegate;
--(void)registerCellsForBuildersInCollectionView:(UICollectionView* _Nonnull)collectionView;
+-(void)registerViewsForBuildersInCollectionView:(UICollectionView* _Nonnull)collectionView;
 -(NSInteger)numberOfItems;
 -(CGSize)sectionItemSizeAtIndexPath:(NSIndexPath* _Nonnull) indexPath inCollectionView:(UICollectionView*)collectionView;
 -(UICollectionViewCell* _Nonnull)sectionItemCellAtIndexPath:(NSIndexPath* _Nonnull) indexPath inCollectionView:(UICollectionView*)collectionView;

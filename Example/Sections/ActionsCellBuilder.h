@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CellBuilderProtocol.h"
+#import <Sections/SectionCellInfraProtocols.h>
 
 @interface ActionsCellBuilder : NSObject<CellBuilderProtocol>
 -(instancetype _Nonnull)initWithCellDelegate:(id<CellDelegate> _Nonnull) cellDelegate;

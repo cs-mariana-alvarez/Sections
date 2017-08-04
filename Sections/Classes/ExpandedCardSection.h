@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SectionCellInfraProtocols.h"
 
-@interface CardSectionImpl : NSObject<CardSection, CellDelegate>
--(instancetype)init;
+@interface ExpandedCardSection : NSObject<CardSection, CellDelegate>
+-(instancetype)initWithCardState:(CardSectionState)state;
 @end
 

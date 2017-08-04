@@ -8,19 +8,20 @@
 
 #import "CollectionViewReusableHeader.h"
 
+
 @implementation CollectionViewReusableHeader
 
-+(CGSize)sizeWithin:(CGRect)bounds withPadding:(UIEdgeInsets)insents{
++(CGSize)sizeWithin:(CGRect)bounds withPadding:(UIEdgeInsets)insents {
     return CGSizeMake(bounds.size.width, 50);
 }
 
-+(NSString*)cellIdentifier {
++(NSString* _Nonnull)cellIdentifier {
     return NSStringFromClass(self.class);
 }
 
-+(void)registerHeaderCellIn:(UICollectionView *)collectionview{
-    NSString *identifier = [self cellIdentifier];
-    UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
++(void)registerHeaderCellIn:(UICollectionView *)collectionview {
+    NSString *identifier = [CollectionViewReusableHeader cellIdentifier];
+    UINib *nib = [UINib nibWithNibName:identifier bundle:[NSBundle bundleForClass:[CollectionViewReusableHeader class]]];
     [collectionview registerNib:nib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier];
 }
 

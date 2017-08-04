@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Sizeable.h"
+
 @interface CollectionViewReusableHeader : UICollectionReusableView<Sizeable>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 +(NSString*)cellIdentifier;

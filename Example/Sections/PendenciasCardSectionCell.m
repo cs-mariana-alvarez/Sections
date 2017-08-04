@@ -9,6 +9,7 @@
 #import "PendenciasCardSectionCell.h"
 #import "PendenciasCell.h"
 #import "PendenciasCellBuilder.h"
+#import "CollectionViewReusableHeaderBuilder.h"
 
 @implementation PendenciasCardSectionCell
 @synthesize cellBuilders;
@@ -27,12 +28,7 @@
 
                           ];
     self.cellBuilders = builders;
-}
-
--(void)registerCellsForBuildersInCollectionView:(UICollectionView *)collectionView {
-    for(id<CellBuilderProtocol> builder in self.cellBuilders) {
-        [builder registerCellInCollectionView:collectionView];
-    }
+    self.headerBuilder = [[CollectionViewReusableHeaderBuilder alloc] initWithTitle:@"Section Title: 0"];
 }
 
 -(NSInteger)numberOfItems {

@@ -1,7 +1,7 @@
 PODS:
   - Bricks (0.1.2)
   - Expecta (1.0.5)
-  - Sections (0.0.1)
+  - Sections (0.0.5)
   - Specta (1.0.6)
 
 DEPENDENCIES:
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bricks: c380078646ec88de088a43d2e81a6b26f7e560e7
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  Sections: 5241c35caca53aaffac41dae879056d5eab091ca
+  Sections: 092ec087e97d39cdf1a7f807fe4e3820e840dc6c
   Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
 
 PODFILE CHECKSUM: 10a9924e66bceeca62964679a94ff1f307247d0e
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

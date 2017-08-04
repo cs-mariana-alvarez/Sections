@@ -8,7 +8,7 @@
 
 #import "PendenciasCardSectionBuilder.h"
 #import "PendenciasCardSectionCell.h"
-#import "CardSectionImpl.h"
+#import <Sections/ExpandedCardSection.h>
 
 @implementation PendenciasCardSectionBuilder
 
@@ -22,7 +22,7 @@
 
 -(id<Section>)section {
     
-    CardSectionImpl *section = [[CardSectionImpl alloc] init];
+    ExpandedCardSection *section = [[ExpandedCardSection alloc] init];
     
     PendenciasCardSectionCell *pendenciasCardSection = [[PendenciasCardSectionCell alloc] init];
     

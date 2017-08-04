@@ -9,7 +9,7 @@
 #import "SaldoCardSectionBuilder.h"
 #import "SaldoExpandedCardSectionCell.h"
 #import "SaldoCardSectionCell.h"
-#import "CardSectionImpl.h"
+#import <Sections/ExpandedCardSection.h>
 
 @implementation SaldoCardSectionBuilder
 
@@ -23,7 +23,7 @@
 -(id<Section>)section {
     
     
-    CardSectionImpl *section = [[CardSectionImpl alloc] init];
+    ExpandedCardSection *section = [[ExpandedCardSection alloc] init];
     section.cardSectionDelegate = self.delegate;
     
     SaldoCardSectionCell *saldoCardSection = [[SaldoCardSectionCell alloc] initWithCellDelegate:section];

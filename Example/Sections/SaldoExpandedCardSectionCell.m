@@ -17,6 +17,7 @@
 #import "LISUtilizadoBuilder.h"
 #import "SaldoLISBuilder.h"
 #import "ActionsCellBuilder.h"
+#import "CollectionViewReusableHeaderBuilder.h"
 
 @interface SaldoExpandedCardSectionCell ()
 @property(nonatomic, weak, nullable) id<CellDelegate> delegate;
@@ -47,7 +48,9 @@
                           [[SaldoLISBuilder alloc] init],
                           [[ActionsCellBuilder alloc] initWithCellDelegate:self.delegate]
                           ];
+    
     self.cellBuilders = builders;
+    self.headerBuilder = [[CollectionViewReusableHeaderBuilder alloc] initWithTitle:@"Section Title: 2"];
 }
 
 -(void)registerCellsForBuildersInCollectionView:(UICollectionView *)collectionView {

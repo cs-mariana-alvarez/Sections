@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SectionCellInfraProtocols.h"
 
 @protocol CellBuilderProtocol <NSObject>
 

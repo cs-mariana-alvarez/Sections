@@ -58,10 +58,10 @@
 		99E748141E8AE54F006B805C /* CollectionViewReusableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E748001E8AE54F006B805C /* CollectionViewReusableHeader.m */; };
 		99E748151E8AE54F006B805C /* CollectionViewReusableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E748011E8AE54F006B805C /* CollectionViewReusableHeader.xib */; };
 		99E748191E8AE57E006B805C /* GridSectionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E748181E8AE57E006B805C /* GridSectionImpl.m */; };
-		99E7481C1E8AE586006B805C /* CardSectionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E7481B1E8AE586006B805C /* CardSectionImpl.m */; };
 		99E748201E8AE595006B805C /* GridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E7481E1E8AE595006B805C /* GridCollectionViewCell.m */; };
 		99E748211E8AE595006B805C /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E7481F1E8AE595006B805C /* GridCollectionViewCell.xib */; };
 		99E748251E8AE5A7006B805C /* CardsDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E748241E8AE5A7006B805C /* CardsDatasource.m */; };
+		C40CCC6B1F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C40CCC6A1F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.m */; };
 		F7AF8C920926035A6F3C562B /* Pods_Sections_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44180B463435749A4A062E5D /* Pods_Sections_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,8 +162,6 @@
 		99E748011E8AE54F006B805C /* CollectionViewReusableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewReusableHeader.xib; sourceTree = "<group>"; };
 		99E748171E8AE57E006B805C /* GridSectionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridSectionImpl.h; sourceTree = "<group>"; };
 		99E748181E8AE57E006B805C /* GridSectionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridSectionImpl.m; sourceTree = "<group>"; };
-		99E7481A1E8AE586006B805C /* CardSectionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSectionImpl.h; sourceTree = "<group>"; };
-		99E7481B1E8AE586006B805C /* CardSectionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSectionImpl.m; sourceTree = "<group>"; };
 		99E7481D1E8AE595006B805C /* GridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridCollectionViewCell.h; sourceTree = "<group>"; };
 		99E7481E1E8AE595006B805C /* GridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridCollectionViewCell.m; sourceTree = "<group>"; };
 		99E7481F1E8AE595006B805C /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -172,6 +170,8 @@
 		9D212FE799B5D3DBCF048E9C /* Pods-Sections_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sections_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sections_Example/Pods-Sections_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9FBD0A7315D53EB3DA845025 /* Sections.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Sections.podspec; path = ../Sections.podspec; sourceTree = "<group>"; };
 		C145D30C11C5BAA500555BBC /* Pods-Sections_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sections_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sections_Example/Pods-Sections_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C40CCC691F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewReusableHeaderBuilder.h; sourceTree = "<group>"; };
+		C40CCC6A1F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewReusableHeaderBuilder.m; sourceTree = "<group>"; };
 		D1E0282F73BCF0A5B0E56E85 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +249,7 @@
 		6003F593195388D20070C39A /* Example for Sections */ = {
 			isa = PBXGroup;
 			children = (
+				C40CCC651F35081000D6C75D /* HeaderBuilder */,
 				99E748221E8AE59E006B805C /* Datasource */,
 				99E748161E8AE56F006B805C /* SectionImplementations */,
 				99E747E31E8AE540006B805C /* Cells */,
@@ -398,9 +399,6 @@
 				99E747FC1E8AE54F006B805C /* FeedbackCell.h */,
 				99E747FD1E8AE54F006B805C /* FeedbackCell.m */,
 				99E747FE1E8AE54F006B805C /* FeedbackCell.xib */,
-				99E747FF1E8AE54F006B805C /* CollectionViewReusableHeader.h */,
-				99E748001E8AE54F006B805C /* CollectionViewReusableHeader.m */,
-				99E748011E8AE54F006B805C /* CollectionViewReusableHeader.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -408,8 +406,6 @@
 		99E748161E8AE56F006B805C /* SectionImplementations */ = {
 			isa = PBXGroup;
 			children = (
-				99E7481A1E8AE586006B805C /* CardSectionImpl.h */,
-				99E7481B1E8AE586006B805C /* CardSectionImpl.m */,
 				99E748171E8AE57E006B805C /* GridSectionImpl.h */,
 				99E748181E8AE57E006B805C /* GridSectionImpl.m */,
 			);
@@ -423,6 +419,18 @@
 				99E748241E8AE5A7006B805C /* CardsDatasource.m */,
 			);
 			name = Datasource;
+			sourceTree = "<group>";
+		};
+		C40CCC651F35081000D6C75D /* HeaderBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				99E748011E8AE54F006B805C /* CollectionViewReusableHeader.xib */,
+				99E747FF1E8AE54F006B805C /* CollectionViewReusableHeader.h */,
+				99E748001E8AE54F006B805C /* CollectionViewReusableHeader.m */,
+				C40CCC691F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.h */,
+				C40CCC6A1F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.m */,
+			);
+			name = HeaderBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,7 +572,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ADBFBD78C6A4FABBCED5459B /* [CP] Copy Pods Resources */ = {
@@ -624,7 +632,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -644,10 +652,10 @@
 				99E748041E8AE54F006B805C /* PriceCell.m in Sources */,
 				99E747BE1E8AE4E6006B805C /* PendenciasCardSectionBuilder.m in Sources */,
 				99E7480A1E8AE54F006B805C /* LISCell.m in Sources */,
+				C40CCC6B1F35152B00D6C75D /* CollectionViewReusableHeaderBuilder.m in Sources */,
 				99E748141E8AE54F006B805C /* CollectionViewReusableHeader.m in Sources */,
 				99E748061E8AE54F006B805C /* WhiteSpaceCell.m in Sources */,
 				99E7480E1E8AE54F006B805C /* LISUtilizadoCell.m in Sources */,
-				99E7481C1E8AE586006B805C /* CardSectionImpl.m in Sources */,
 				6003F5A7195388D20070C39A /* STViewController.m in Sources */,
 				99E747DE1E8AE52D006B805C /* ActionsCellBuilder.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

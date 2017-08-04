@@ -32,7 +32,7 @@
     _sectionBuilders = sectionBuilders;
     self.sectionItems = [self createCardsSectionItems];
     for (id<Section> section in self.sectionItems) {
-        [section registerCellsForBuildersInCollectionView: self.collectionView];
+        [section registerViewsForBuildersInCollectionView: self.collectionView];
     }
 }
 

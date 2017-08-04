@@ -6,17 +6,15 @@
 //  Copyright © 2017 Thiago Lioy. All rights reserved.
 //
 
-#import "CardSectionImpl.h"
-#import "CollectionViewReusableHeader.h"
+#import "ExpandedCardSection.h"
 
-
-@implementation CardSectionImpl
+@implementation ExpandedCardSection
 @synthesize cardState, regularSectionCell, expandedSectionCell, cardSectionDelegate, sectionDelegate;
 
--(instancetype)init {
+-(instancetype)initWithCardState:(CardSectionState)state {
     self = [super init];
     if(self) {
-        cardState = kRegularState;
+        cardState = state;
     }
     return self;
 }
@@ -44,14 +42,9 @@
     }
 }
 
--(void)registerHeaderSectionViewsIn:(UICollectionView*) collection {
-    [CollectionViewReusableHeader registerHeaderCellIn:collection];
-}
-
--(void)registerCellsForBuildersInCollectionView:(UICollectionView *)collectionView {
-    [self registerHeaderSectionViewsIn:collectionView];
-    [[self regularSectionCell] registerCellsForBuildersInCollectionView:collectionView];
-    [[self expandedSectionCell] registerCellsForBuildersInCollectionView:collectionView];
+-(void)registerViewsForBuildersInCollectionView:(UICollectionView *)collectionView {
+    [[self regularSectionCell] registerViewsForBuildersInCollectionView:collectionView];
+    [[self expandedSectionCell] registerViewsForBuildersInCollectionView:collectionView];
 }
 
 -(NSInteger)numberOfItems {
@@ -77,18 +70,12 @@
 }
 
 -(CGSize)sectionHeaderSizeInCollectionView:(UICollectionView*) collectionView {
-    return CGSizeMake(collectionView.bounds.size.width, 50);
+    return [[[self visibleSectionCell] headerBuilder] sizeWithin:collectionView.bounds];
 }
 
--(UICollectionReusableView*)sectionHeaderCellAtIndexPath:(NSIndexPath*) indexPath inCollectionView:(UICollectionView * _Nonnull)collectionView {
-    CollectionViewReusableHeader *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[CollectionViewReusableHeader cellIdentifier] forIndexPath:indexPath];
-    NSString *title = [NSString stringWithFormat:@"Section Title: %@", @(indexPath.section)];
-    [reusableview setupWith:title];
-    
-    return reusableview;
+-(UICollectionReusableView*)sectionHeaderCellAtIndexPath:(NSIndexPath*) indexPath inCollectionView:(UICollectionView*) collectionView {
+    return [[[self visibleSectionCell] headerBuilder] headerForItemAtIndexPath:indexPath inCollectionView:collectionView];;
 }
-
-
 
 -(void)tooglePresentationState {
     [self toggleState];
@@ -106,9 +93,8 @@
         [self.cardSectionDelegate presentAdditionalDetailsFor:self];
 }
 
--(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath inCollectionView:(UICollectionView * _Nonnull)collectionView {
+-(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath inCollectionView:(UICollectionView * _Nonnull)collectionView{
 }
-
 
 @end
 
