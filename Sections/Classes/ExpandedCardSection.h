@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "SectionCellInfraProtocols.h"
 
+@protocol CardSectionStatePersistence <NSObject>
+-(void)persistState:(CardSectionState)state;
+@end
+
 @interface ExpandedCardSection : NSObject<CardSection, CellDelegate>
--(instancetype)initWithCardState:(CardSectionState)state;
+-(instancetype _Nonnull)initWithCardState:(CardSectionState)state;
+-(instancetype _Nonnull)initWithCardState:(CardSectionState)state cardStatePersistence:(id<CardSectionStatePersistence> _Nullable)cardStatePersistence;
 @end
 

@@ -8,6 +8,10 @@
 
 #import "ExpandedCardSection.h"
 
+@interface ExpandedCardSection ()
+@property(nonatomic, weak, nullable) id<CardSectionStatePersistence> cardStatePersistence;
+@end
+
 @implementation ExpandedCardSection
 @synthesize cardState, regularSectionCell, expandedSectionCell, cardSectionDelegate, sectionDelegate;
 
@@ -15,6 +19,15 @@
     self = [super init];
     if(self) {
         cardState = state;
+    }
+    return self;
+}
+
+-(instancetype)initWithCardState:(CardSectionState)state cardStatePersistence:(id<CardSectionStatePersistence>)cardStatePersistence {
+    self = [super init];
+    if(self) {
+        cardState = state;
+        self.cardStatePersistence = cardStatePersistence;
     }
     return self;
 }
@@ -29,7 +42,10 @@
     } else {
         cardState = kRegularState;
     }
+    
+    [self.cardStatePersistence persistState:cardState];
 }
+
 -(id<SectionCell>)visibleSectionCell {
     if(!self.expandedSectionCell) {
         return self.regularSectionCell;
